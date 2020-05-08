@@ -1,0 +1,183 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "smart factory",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "WhatsRunningIntent",
+          "slots": [
+            {
+              "name": "lineNo",
+              "type": "lineNo"
+            },
+            {
+              "name": "when",
+              "type": "when"
+            },
+            {
+              "name": "timeSlot",
+              "type": "timeSlot"
+            }
+          ],
+          "samples": [
+            "which job is on line {lineNo} {when} {timeSlot}",
+            "whats scheduled for line {lineNo} {when} {timeSlot}",
+            "what jobs on line {lineNo} {when} {timeSlot}",
+            "whats running on line {lineNo} {when} {timeSlot} ",
+            "what is running on line {lineNo} {when} {timeSlot}",
+            "which product is running on line {lineNo} {when} {timeSlot}",
+            "which product is being built on line {lineNo} {when} {timeSlot}",
+            "whats being built on line {lineNo} {when} {timeSlot}",
+            "what is being built on line {lineNo} {when} {timeSlot}"
+          ]
+        },
+        {
+          "name": "FindDowntimeIntent",
+          "slots": [
+            {
+              "name": "when",
+              "type": "when"
+            },
+            {
+              "name": "timeSlot",
+              "type": "timeSlot"
+            }
+          ],
+          "samples": [
+            "are there line stops {when} {timeSlot}",
+            "is there any downtime {when} {timeSlot}",
+            "are we expecting any downtime {when} {timeSlot}",
+            "is downtime scheduled {when} {timeSlot}",
+            "is there downtime {when} {timeSlot}"
+          ]
+        },
+        {
+          "name": "FindPicklistIntent",
+          "slots": [
+            {
+              "name": "when",
+              "type": "when"
+            },
+            {
+              "name": "timeSlot",
+              "type": "timeSlot"
+            },
+            {
+              "name": "lineNo",
+              "type": "lineNo"
+            }
+          ],
+          "samples": [
+            "what do i need for the job running on line {lineNo} {when} {timeSlot}",
+            "whats next on the picklist",
+            "what do i need for line {lineNo} {when} {timeSlot}",
+            "whats on the picklist for the job running on line {lineNo} {when} {timeSlot}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "three"
+              }
+            },
+            {
+              "name": {
+                "value": "two",
+                "synonyms": [
+                  "to"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "one"
+              }
+            }
+          ],
+          "name": "lineNo"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "today",
+                "synonyms": [
+                  "nowadays",
+                  "this"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "tomorrow"
+              }
+            },
+            {
+              "name": {
+                "value": "currently",
+                "synonyms": [
+                  "presently",
+                  "today",
+                  "now"
+                ]
+              }
+            }
+          ],
+          "name": "when"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "pm",
+                "synonyms": [
+                  "after mid day",
+                  "after midday",
+                  "after lunch",
+                  "last",
+                  "evening",
+                  "in the afternoon",
+                  "afternoon"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "am",
+                "synonyms": [
+                  "before mid day",
+                  "before midday",
+                  "before lunch",
+                  "first",
+                  "in the morning",
+                  "morning"
+                ]
+              }
+            }
+          ],
+          "name": "timeSlot"
+        }
+      ]
+    }
+  },
+  "version": "26"
+}
