@@ -89,6 +89,10 @@
             "what do i need for line {lineNo} {when} {timeSlot}",
             "whats on the picklist for the job running on line {lineNo} {when} {timeSlot}"
           ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
         }
       ],
       "types": [
@@ -176,8 +180,13 @@
           ],
           "name": "timeSlot"
         }
-      ]
+      ],
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "LOW"
+        }
+      }
     }
   },
-  "version": "26"
+  "version": "27"
 }

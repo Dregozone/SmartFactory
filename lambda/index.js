@@ -231,6 +231,22 @@ const HelpIntentHandler = {
             .getResponse();
     }
 };
+
+const FallbackIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.FallbackIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'The smart factory skill can\'t help with that but I can help with upcoming schedule, downtime or picklists';
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
 const CancelAndStopIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -301,6 +317,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         FindDowntimeIntentHandler,
         FindPicklistIntentHandler,
         HelpIntentHandler,
+        FallbackIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
         IntentReflectorHandler, // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
